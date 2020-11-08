@@ -19,11 +19,29 @@ class RegisterController extends Controller
    }
 
    function delete($id){
-$user = User::find($id);
-$user->delete();
+    $user = User::find($id);
+    $user->delete();
 
 // echo 'id='.$id;
-return redirect('/user');
+    return redirect('/user');
 
+   }
+
+   function editData($id){
+
+    $user=User::find($id);
+    return view('edite',['data'=>$user]);
+   }
+
+   function updateDate(Request $req){
+
+    $user =User::find($req->id);
+
+    $user->name=$req->name;
+    $user->email=$req->email;
+    $user->address=$req->address;
+    $user->save();
+
+    return redirect('/user');
    }
 }

@@ -52,8 +52,19 @@ Route::view('/upload', 'upload');
 Route::view('/newuser', 'register');
 
 Route::post('file', [UploadController::class, 'index']);
+
+//input data
 Route::post('regi', [RegisterController::class, 'index']);
+
+// delete data
 Route::get('remo/{id}', [RegisterController::class, 'delete']);
+
+// search data
+Route::get('edit/{id}', [RegisterController::class, 'editData']);
+
+// update data
+Route::post('/update', [RegisterController::class, 'updateDate']);
+
 
 
 // Route::get('remove/{{id}}', [UserController::class, 'delete']);

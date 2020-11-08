@@ -6,6 +6,7 @@
         <td>email</td>
         <td>address</td>
         <td>Delete</td>
+        <td>Update</td>
     </tr>
     @foreach ($collection as $item)
     <tr>
@@ -14,6 +15,7 @@
         <td>{{$item['email']}}</td>
         <td>{{$item['address']}}</td>
         <td><a href={{'remo/'.$item['id']}}>delete</a></td>
+        <td><a href={{'edit/'.$item['id']}}>Update</a></td>
     </tr>
 
     @endforeach
